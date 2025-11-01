@@ -235,18 +235,32 @@ export default function Index() {
                 <DialogDescription>Отправить сообщение всем пользователям</DialogDescription>
               </DialogHeader>
               <div className="space-y-4">
+                {currentBroadcast && (
+                  <div className="bg-gradient-to-r from-purple-100 to-pink-100 border-2 border-purple-300 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <Icon name="MessageSquare" size={20} className="text-purple-600 mt-1 flex-shrink-0" />
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-purple-900 mb-1">Текущее сообщение:</p>
+                        <p className="text-base text-purple-800">{currentBroadcast.message}</p>
+                        <p className="text-xs text-purple-600 mt-2">
+                          Отправлено: {new Date(currentBroadcast.createdAt).toLocaleString('ru-RU')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Ключ доступа</label>
                   <Input
                     type="password"
-                    placeholder="admin123"
+                    placeholder="misha123"
                     value={adminKey}
                     onChange={(e) => setAdminKey(e.target.value)}
                     className="border-2 focus:border-orange-400"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Сообщение</label>
+                  <label className="text-sm font-medium">Новое сообщение</label>
                   <Textarea
                     placeholder="Hello everyone! 👋"
                     value={adminMessage}
