@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "Handle OPTIONS request",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Generate image with valid prompt",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "prompt": "A beautiful sunset over mountains"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "imageUrl": "string",
+        "prompt": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Reject empty prompt",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "prompt": ""
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
