@@ -149,6 +149,22 @@ export default function Index() {
           <p className="text-xl text-gray-600">Превратите слова в невероятные картины с помощью AI</p>
         </div>
 
+        {currentBroadcast && (
+          <div className="max-w-3xl mx-auto mb-8 animate-scale-in">
+            <Card className="bg-gradient-to-r from-purple-500 to-pink-500 border-0 shadow-2xl">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4 text-white">
+                  <Icon name="Megaphone" size={32} className="flex-shrink-0 animate-pulse" />
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-2">Сообщение от администратора</h3>
+                    <p className="text-lg leading-relaxed">{currentBroadcast.message}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
         <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           <Card className="animate-scale-in shadow-2xl border-2 border-purple-200 hover:shadow-purple-300 transition-all duration-300">
             <CardHeader>
