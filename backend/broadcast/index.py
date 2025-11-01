@@ -59,7 +59,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         headers = event.get('headers', {})
         admin_key = headers.get('x-admin-key', '') or headers.get('X-Admin-Key', '')
         
-        if admin_key != 'admin123':
+        if admin_key != 'misha123':
             cursor.close()
             conn.close()
             return {

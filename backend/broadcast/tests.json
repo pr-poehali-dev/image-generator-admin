@@ -18,7 +18,7 @@
       "method": "POST",
       "path": "/",
       "headers": {
-        "x-admin-key": "admin123"
+        "x-admin-key": "misha123"
       },
       "body": {
         "message": "Hello everyone!"
